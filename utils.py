@@ -391,7 +391,7 @@ class MusicPlayer(object):
                         await self.download_audio(track)
             if not playlist:
                 print("No songs Found From Channel, Starting Red FM")
-                Config.CPLAY=False
+                Config.CPLAY=True
                 Config.STREAM_URL="https"
                 await self.start_radio()
                 return
@@ -402,7 +402,7 @@ class MusicPlayer(object):
                 if LOG_GROUP:
                     await self.send_playlist()          
         except Exception as e:
-            Config.CPLAY=False
+            Config.CPLAY=True
             Config.STREAM_URL="https"
             await self.start_radio()
             print("Errorrs Occured\n Starting Red FM", e)
