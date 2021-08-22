@@ -83,7 +83,7 @@ ydl_opts = {
 }
 ydl = YoutubeDL(ydl_opts)
 
-RADIO_TITLE=os.environ.get("RADIO_TITLE", " 🎸 Music 24/7 | Radio Mode")
+RADIO_TITLE=os.environ.get("RADIO_TITLE", "ᴍᴜsɪᴄ 𝟸𝟺x𝟽 | ᴀᴍɪɢᴏ ™")
 if RADIO_TITLE=="NO":
     RADIO_TITLE = None
 
@@ -392,7 +392,7 @@ class MusicPlayer(object):
             if not playlist:
                 print("No songs Found From Channel, Starting Red FM")
                 Config.CPLAY=False
-                Config.STREAM_URL="https://bcovlive-a.akamaihd.net/19b535b7499a4719a5c19e043063f5d9/ap-southeast-1/6034685947001/playlist.m3u8?nocache=825347"
+                Config.STREAM_URL="https"
                 await self.start_radio()
                 return
             else:
@@ -403,7 +403,7 @@ class MusicPlayer(object):
                     await self.send_playlist()          
         except Exception as e:
             Config.CPLAY=False
-            Config.STREAM_URL="https://bcovlive-a.akamaihd.net/19b535b7499a4719a5c19e043063f5d9/ap-southeast-1/6034685947001/playlist.m3u8?nocache=825347"
+            Config.STREAM_URL="https"
             await self.start_radio()
             print("Errorrs Occured\n Starting Red FM", e)
 
